@@ -1,0 +1,26 @@
+<div class="login">
+  <h1>Login</h1>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="email">Email</label>
+      <mat-form-field appearance="fill" >
+        <input matInput type="email" id="email" formControlName="email" placeholder="Introduce tu email">
+      </mat-form-field>
+      <div>
+        <span *ngIf="loginForm.get('email')?.hasError('required')">Email Es requerido</span>
+        <span *ngIf="loginForm.get('email')?.hasError('email')">Email es invalido</span>
+      </div>
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <mat-form-field appearance="fill">
+        <input matInput type="password" id="password" formControlName="password" placeholder="Introduce tu contraseña">
+      </mat-form-field>
+      <div>
+        <span *ngIf="loginForm.get('password')?.hasError('required')">Contraseña Requerida</span>
+        <span *ngIf="loginForm.get('password')?.hasError('minlength')">Minimo 6 caracteres</span>
+      </div>
+    </div>
+    <button mat-raised-button type="submit" [disabled]="!loginForm.valid">Login</button>
+  </form>
+  </div>

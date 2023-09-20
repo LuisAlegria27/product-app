@@ -1,0 +1,7 @@
+<app-header [cartCount]="cardQuantity" [cartProducts]="cartProducts"></app-header>  
+<h1>Product List Father</h1>
+
+<div *ngFor="let product of products">
+  <app-product-detail [product]="product" (productSelected)="handleProductSelected($event)">
+  </app-product-detail>
+</div>

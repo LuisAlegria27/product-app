@@ -1,0 +1,14 @@
+<div *ngIf="product" [ngClass]="{'product-row': true }">
+  <img [src]="product.image" [alt]="product.name" width="200" height="200"  />
+  <div class="product-details">
+    <h2  >{{ product.name   }}</h2>
+    <p>{{ product.description }}</p>
+    <p><strong>Price:</strong> {{ product.price | currency }}</p>
+    <button *ngIf="product.stock>0" (click)="selectProduct()">Agregar al Carrito</button>
+    <br><br>
+    <button  (click)="showDetail()">Ver detalle</button>
+    <div [hidden]="!product.stock">Quedan {{ product.stock }} unidades</div>
+     <h3 style="color: red;" *ngIf="product.stock==0">Agotado</h3>
+  </div>
+  </div>
+  

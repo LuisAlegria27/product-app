@@ -1,0 +1,50 @@
+<div class="product-list-container">
+  <div class="row" style="display: felx; align-items: center; justify-content: space-between">
+    <h1 style="margin-left: 10%">Lista de Productos</h1>
+    <button mat-fab class="create-fab-button" (click)="handleProductCreate()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+
+  <mat-table [dataSource]="products">
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+
+      <mat-cell *matCellDef="let product"> {{ product.id }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+
+      <mat-cell *matCellDef="let product"> {{ product.name }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <mat-header-cell *matHeaderCellDef> Precio </mat-header-cell>
+
+      <mat-cell *matCellDef="let product">
+        {{ product.price | currency }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="stock">
+      <mat-header-cell *matHeaderCellDef> Stock </mat-header-cell>
+      <mat-cell *matCellDef="let product"> {{ product.stock }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="actions"><mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
+      <mat-cell *matCellDef="let product">
+
+        <button mat-button color="primary" (click)="handleProductSelected(product)"><mat-icon>visibility</mat-icon></button>
+        <button mat-button color="primary" (click)="handleProductEdit(product)"><mat-icon>edit</mat-icon></button>
+        <button mat-button color="warn" (click)="handleProductDelete(product)"><mat-icon>delete</mat-icon></button>
+
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>

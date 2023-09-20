@@ -1,0 +1,45 @@
+:host {
+    display: block;
+    padding: 15px;
+    margin-top: 10px;
+    border: 2px solid #007BFF;
+    /* Bordes azules */
+    background-color: #f2faff;
+    /* Color azul muy claro */
+  }
+  .stock-low {
+    background-color: rgb(255, 131, 131);
+    border: 2px solid red;
+    /* Color rojo */
+  }
+  h2 {
+    color: #007BFF;
+    /* Color azul */
+  }
+  
+  p {
+    color: #666;
+  }
+  
+  button {
+    padding: 5px 15px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+    /* Tonalidad azul oscuro al pasar el cursor */
+  }
+  
+  .product-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .product-details {
+    flex: 1;
+  }
