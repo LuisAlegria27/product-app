@@ -23,10 +23,10 @@ export class ProductListComponent {
           name: item.title,
           description: item.description,
           price: item.price,
-          stock: item.rating.count,
-          image: item.image,
+          stock: 100,
+          image: item.images[0],
           color: 'blue',
-          spects:item.category
+          spects:item.category.name
         }); //Agrega un nuevo elemento al array
 
 

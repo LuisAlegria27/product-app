@@ -26,6 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductFormComponent } from './product-form/product-form.component';
 import { ProductTableComponent } from './product-table/product-table.component';
 import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog'
+import { DeleteProductDialog } from './product-table/product-table.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { MatCardModule } from '@angular/material/card';
     LoginComponent,
     ProductDescriptionComponent,
     ProductFormComponent,
-    ProductTableComponent
+    ProductTableComponent,
+    DeleteProductDialog
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,8 @@ import { MatCardModule } from '@angular/material/card';
     MatIconModule,
     MatPaginatorModule,
     MatSortModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
